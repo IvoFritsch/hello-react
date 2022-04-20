@@ -1,0 +1,64 @@
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+}
+
+#navbar-header {
+  height: 50px;
+  border-bottom: 0.5px solid #d7d7d7;
+  position: fixed;
+  background: #fff;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#navbar-header nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar-header nav *{
+  margin: 0 5px;
+}
+
+#logo {
+  width: 120px;
+  display: flex;
+}
+
+#logo img{
+  width: 100%;
+}
+
+.busca form{
+  background: #f7f7f7;
+  padding: 7px 29px;
+  color: gray;
+  border: 0.5px solid #bbbbbb;
+  border-radius: 4px;
+}
+
+.busca form input{
+  background: none;
+  border: none;
+}
+
+.avatar-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar{ 
+  width: 30px;
+}

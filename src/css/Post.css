@@ -1,0 +1,78 @@
+
+.card {
+  max-width: 464px;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+}
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card-header div{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.card-header div b{
+margin-left: 10px;
+}
+.card-img{
+width: 100%;
+}
+.card-img img{
+width: 100%;
+}
+
+.card-body{
+  padding: 10px;
+}
+.card-itens{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.likes{
+display: flex;
+align-items: center;
+}
+
+.likes b{
+margin-left: 10px;
+}
+
+.card-comments{
+  font-size: 14px;
+}
+
+.form-comments{
+  padding: 10px;
+  border-top: 0.5px solid #d7d7d7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-comments input{
+border: none;
+width: 100%;
+}
+
+.form-comments input:focus,  .form-comments .input:active{
+border: none;
+box-shadow: none;
+outline: 0;
+}
+
+
+.form-comments button{
+border: none;
+background-color: none;
+background: none;
+color: blue;
+padding: 10px;
+}
+
