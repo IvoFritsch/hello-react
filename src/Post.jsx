@@ -1,12 +1,15 @@
 import './css/Post.css'
 
-export default function Post() {
+export default function Post(props) {
+
+  const dados = props.dados
+
   return (
     <div className="card">
       <div className="card-header">
         <div>
           <img className="avatar" src="img/avatar-example.png" alt=""/>
-          <b>Ana Paula</b>
+          <b>{dados.author}</b>
         </div>
         <img src="img/icons/more-vertical.svg" alt=""/>
       </div>
@@ -17,12 +20,18 @@ export default function Post() {
         <div className="card-itens">
           <div className="likes">
             <img src="img/icons/heart.svg" width="24px" alt=""/>
-            <b><span>1</span> likes</b>
+            <b><span>{dados.qttLikes}</span> likes</b>
           </div>
-          <b>Postado no dia: 00/00/0000</b>
+          <b>Postado no dia: {dados.date}</b>
         </div>
         <div className="card-comments">
-          <p><b>Nome comentarista</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris  </p>
+          {dados.comments.map(c => 
+            <p>
+              <b>{c.author}</b>
+              &nbsp;
+              {c.text}
+            </p>
+          )}
         </div>
       </div>
       <form className="form-comments" action="/comentar" method="post">
