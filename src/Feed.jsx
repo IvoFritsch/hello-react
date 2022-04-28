@@ -1,3 +1,4 @@
+import BotaoContador from './BotaoContador'
 import './css/Feed.css'
 import Post from './Post'
 
@@ -50,7 +51,11 @@ export default function Feed() {
  
   return (
     <main className="container content">
-
+      <BotaoContador valorInicial={3}/>
+      <BotaoContador valorInicial={6}/>
+      <BotaoContador valorInicial={1}/>
+      <BotaoContador valorInicial={10}/>
+      <BotaoContador valorInicial={2}/>
       {posts.map(p => 
         <Post dados={p}/>
       )}

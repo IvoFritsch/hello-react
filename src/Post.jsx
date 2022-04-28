@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import './css/Post.css'
 
 export default function Post(props) {
 
+  const [deuLike, setDeuLike] = useState(false)
+
   const dados = props.dados
+
+  const [qttLikes, setQttLikes] = useState(dados.qttLikes)
+
+  function like() {
+    setDeuLike(!deuLike)
+    setQttLikes(qttLikes + 1)
+  }
 
   return (
     <div className="card">
@@ -18,9 +28,14 @@ export default function Post(props) {
       </div>
       <div className="card-body">
         <div className="card-itens">
-          <div className="likes">
-            <img src="img/icons/heart.svg" width="24px" alt=""/>
-            <b><span>{dados.qttLikes}</span> likes</b>
+          <div className="likes" onClick={like}>
+            {
+              deuLike ?
+                <img src="img/red-heart.png" width="24px" alt=""/>
+                :
+                <img src="img/icons/heart.svg" width="24px" alt=""/>
+            }
+            <b><span>{qttLikes}</span> likes</b>
           </div>
           <b>Postado no dia: {dados.date}</b>
         </div>
