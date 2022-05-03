@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './css/Post.css'
 
 export default function Post(props) {
@@ -8,6 +8,8 @@ export default function Post(props) {
   const dados = props.dados
 
   const [qttLikes, setQttLikes] = useState(dados.qttLikes)
+
+  const [inputComentario, setInputComentario] = useState('')
 
   function like() {
     setDeuLike(!deuLike)
@@ -40,8 +42,8 @@ export default function Post(props) {
           <b>Postado no dia: {dados.date}</b>
         </div>
         <div className="card-comments">
-          {dados.comments.map(c => 
-            <p>
+          {dados.comments.map((c, index) => 
+            <p key={index}>
               <b>{c.author}</b>
               &nbsp;
               {c.text}
@@ -50,8 +52,12 @@ export default function Post(props) {
         </div>
       </div>
       <form className="form-comments" action="/comentar" method="post">
-        <input type="text" hidden name="postId" value=""/>
-        <input type="text" placeholder="Adicione um comentário..." name="description"/>
+        <input 
+          value={inputComentario} 
+          onChange={(e) => setInputComentario(e.target.value)}
+          type="text" 
+          placeholder="Adicione um comentário..." 
+          name="description"/>
         <button type="submit">Comentar</button>
       </form>
     </div>
